@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
-const { Provider, Consumer } = React.createContext()
+let ContextType
+const { Provider, Consumer } = ContextType = React.createContext()
 
 class UserProvider extends PureComponent {
 
@@ -42,4 +43,4 @@ class UserProvider extends PureComponent {
 
 }
 
-export { UserProvider, Consumer as UserConsumer }
+export { UserProvider, Consumer as UserConsumer, ContextType }
