@@ -7,8 +7,7 @@ class UserProvider extends PureComponent {
   state = {
     username: '',
     password: '',
-    userLogged: false,
-    isWrong: false
+    userLogged: false
   }
 
   handleTextChange = e => {
@@ -17,8 +16,12 @@ class UserProvider extends PureComponent {
 
   handleSubmit = e => {
     e.preventDefault()
+    this.setState({ userLogged: true })
+  }
+
+  handleLogout = () => {
     this.setState({
-      userLogged: true,
+      userLogged: false,
       username: '',
       password: ''
     })
@@ -29,7 +32,8 @@ class UserProvider extends PureComponent {
       <Provider value={{
         ...this.state,
         handleTextChange: this.handleTextChange,
-        handleSubmit: this.handleSubmit
+        handleSubmit: this.handleSubmit,
+        handleLogout: this.handleLogout
       }}>
         {this.props.children}
       </Provider>

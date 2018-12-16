@@ -1,18 +1,26 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import { Button, Icon } from 'antd';
 
-import Navbar from '../../component/Navbar';
+import { Wrapper, LogoutWrapper } from './styles';
+import { UserConsumer } from '../../context/UserContext';
 
-class Dashboard extends PureComponent {
-
+export default class Dashboard extends Component {
   render() {
     return (
-      <>
-        <Navbar />
-        <div>dsaddas</div>
-      </>
+      <React.Fragment>
+        <UserConsumer>
+          {({ username, handleLogout }) => (
+            <Wrapper>
+              <h3>Welcome, {username}</h3>
+              <LogoutWrapper>
+                <Button type="danger" onClick={handleLogout}>
+                  <Icon type="logout" /> Logout
+                </Button>
+              </LogoutWrapper>
+            </Wrapper>
+          )}
+        </UserConsumer>
+      </React.Fragment>
     )
   }
-
 }
-
-export default Dashboard
