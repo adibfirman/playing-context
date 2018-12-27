@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Button, Icon } from 'antd';
 
 import { Wrapper, LogoutWrapper } from './styles';
-import { ContextType } from '../../context/UserContext';
+import { UserContextType } from '../../context/UserContext';
 
 export default class Dashboard extends Component {
 
-  static contextType = ContextType
+  static contextType = UserContextType
 
   render() {
     const { username, handleLogout } = this.context

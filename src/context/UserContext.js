@@ -43,4 +43,4 @@ class UserProvider extends PureComponent {
 
 }
 
-export { UserProvider, Consumer as UserConsumer, ContextType }
+export { UserProvider, Consumer as UserConsumer, ContextType as UserContextType }
